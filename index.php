@@ -1,4 +1,4 @@
-<"DOCTYPE html>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,7 @@
     <script>
         document.write("Olá Mundo JS 2")
     </script>
+    <br>
     <?php
     echo "Olá Mundo PHP";
     ?>        
