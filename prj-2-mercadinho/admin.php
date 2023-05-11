@@ -30,7 +30,7 @@ include('gravar-produto.php');
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="fileToUpload" class="form-label">Imagem:</label>
-                        <input type="file" class="form-control" id="fileToUpload" name="filetoUpload">
+                        <input type="file" class="form-control" id="fileToUpload" name="fileToUpload">
                         <input type="<?php echo $mostrarfileAtual ?>" class="form-control"
                         id="fileAtual" name="fileAtual" value="<?php echo $imagem ?>">
                     </div>

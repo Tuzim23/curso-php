@@ -51,7 +51,7 @@
             <div class="card">
                 <img class="card-img-top" src="<?php echo $imagem; ?>" alt="Card image" style="width:100%">
                 <div class="card-body"> 
-                    <h4 class="card-style"><?php echo $nome; ?></h4>
+                    <h4 class="card-title"><?php echo $nome; ?></h4>
                     <p class="card-text">R$: <?php echo $valor; ?>
                         <a href="#" class="btn btn-outline-info" onclick="addItem(<?php echo $i ?>)">🛒</a>
                     </p>
@@ -101,22 +101,22 @@
     lsCarrinho = [];
     valorEncomenda = 0;
 
-    function additem(i) {
+    function addItem(i) {
         if (lsCarrinho[i] != true) {
             lsCarrinho[i] = true;
             document.getElementsByClassName("btn")[i].classList.remove("btn-outline-info");
-            document.getElementsByClassName("btn")[i].classlist.add("btn-info");
+            document.getElementsByClassName("btn")[i].classList.add("btn-info");
         }else{
             lsCarrinho[i] = false;
-            document.getElementsByClassName("btn")[i].classlist.remove("btn-info");
-            document.getElementsByClassName("btn")[i].classlist.add("btn-outline-info");
+            document.getElementsByClassName("btn")[i].classList.remove("btn-info");
+            document.getElementsByClassName("btn")[i].classList.add("btn-outline-info");
         }
     }
     lsProduto = [];
 
     function carrinho () {
         valorEncomenda = 0;
-        lsProduto= [];
+        lsProduto = [];
         for (const i in lsCarrinho) {
             if (lsCarrinho[i]) {
                 p = {};
@@ -137,15 +137,15 @@
         for (const i in lsProduto) {
             p = lsProduto[i];
             p.valorUnitario = p.valor;
-            tbCorpo +=`
+            tbCorpo += `
             <tr>
                 <td>${p.nome}</td>
                 <td class="valor">${p.valor}</td>
                 <td>
-                    <span class="up" onclick="mudarQt(${i},1)">⏫</span>
+                    <span class="up" onclick="mudarQt(${i},1)">⬆️</span>
                     <span class="qt">${p.quantidade}</span>
-                    <span class="down" onclick="mudarQt(${i},-1)">⏬</span>
-                </td>
+                    <span class="down" onclick="mudarQt(${i},-1)">⬇️</span>
+                </td>   
             </tr>
             `;
             
@@ -165,7 +165,7 @@
         p.quantidade +=qt;
         if (p.quantidade <= 0) {
             addItem(p.id);
-            document.getElementsByTagName("tr")[i + 1].style.display = "nome";
+            document.getElementsByTagName("tr")[i + 1].style.display = "none";
             p.valor = 0;
             atualizaValorEncomenda();
             return;
