@@ -8,6 +8,6 @@ CREATE TABLE admin(
 CREATE TABLE tarefa(
     id int primary key auto_increment,
     id_admin int,
-    nomeT varchar(100),
+    titulo varchar(100),
     descricao varchar(255)
 );
