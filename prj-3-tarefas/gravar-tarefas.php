@@ -2,7 +2,7 @@
 include("conectar.php");
 $id = $titulo = $descricao = $tpMsg = $msg = "";
 
-// echo $id_admin;
+
 if(isset($_POST["titulo"])){
     $titulo = $_POST["titulo"];
     $descricao = $_POST["descricao"];
@@ -12,7 +12,6 @@ if(isset($_POST["titulo"])){
     }else{
         $sql = "update tarefa set titulo = '$titulo', descricao = '$descricao' where id = $id and id_admin = $id_admin ";
     }
-    // echo $sql;
     conectar($sql);
     $tpMsg = "success";
     $msg = "Ok ao gravar.";

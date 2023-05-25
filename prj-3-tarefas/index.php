@@ -31,10 +31,10 @@
                         <input type="password" class="form-control" id="senha" placeholder="Enter password" name="senha">
                     </div>
                     <button type="submit" class="btn btn-primary">Acessar</button>
-                    <a href="form-criar-conta.php">Criar conta</a>
+                    <a href="form-criar-conta.php" class="btn btn-primary">Criar conta</a>
+                    <a href="listar-tarefas.php" class="btn btn-default">Visualizar Tarefas</a>
+                    <a href='form-atualizar-senha.php?editar=$id'>Atualizar Senha</a>
                 </form>
-                <br>
-                <a href="listar-tarefas.php">Visualizar Tarefas</a>
             </div>
         </div>
     </div>

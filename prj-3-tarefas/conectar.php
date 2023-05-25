@@ -21,3 +21,4 @@ function conectar($sql){
     }
     return $con->query($sql);
 }
+?>

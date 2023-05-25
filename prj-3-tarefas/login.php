@@ -10,7 +10,8 @@ if(isset($_POST['email'])){
     $resut = conectar($sql);
     if($linha = $resut->fetch_assoc()){
         $_SESSION['id_admin'] = $linha['id'];
-        echo "<script>window.location.replace('lista-publicacoes.php');</script>";
+        echo "<script>window.location.replace('listar-tarefas.php');</script>";
+        
     }else{
         $msg = "Usuário ou Senha incorreto.";
     }

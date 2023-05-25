@@ -14,8 +14,9 @@
     <div class="container">
         <h2>Lista de Tarefas
             <?php if ($id_admin > 0) { ?>
-                <a href="form-tarefa.php" class="btn btn-success">Nova Tarefa</a>
+                <a href="form-tarefa.php" class="btn btn-success">Nova Publicação</a>
                 <a href="logoff.php" class="btn btn-danger">Sair</a>
+                <a href="index.php"class="btn btn-default">Voltar</a>
             <?php } ?>
         </h2>
         <table class="table">
@@ -25,14 +26,14 @@
             </tr>
             <?php
             include("conectar.php");
-            $sql = "select p.id, p.titulo from tarefa p inner join admin a on a.id = p.id_admin;";
+            $sql = "select * from tarefa;";
             $resut = conectar($sql);
             while ($linha = $resut->fetch_assoc()) {
                 $id = $linha['id'];
-                $titulo = $linha['titulo'];
+                $t = $linha['titulo'];
                 echo "<tr>
-                        <td>$t</td>                        
-                        <td><a href='tarefa.php?'>👀</a></td>
+                        <td>$t</td>
+                        <td><a href='tarefa.php?id=$id'>👀</a></td>
                     </tr>";
             }
             ?>

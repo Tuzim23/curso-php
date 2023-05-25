@@ -1,8 +1,10 @@
 <?php
 include('conectar.php');
-$titulo = $descricao = "";
+include('validar-session.php');
+$titulo = $descricao = $id_publicacao = "";
 if(isset($_GET['id'])){
     $id = $_GET['id'];
+    $id_publicacao = $id;
     $sql = "select * from tarefa where id = $id;";
     $resut = conectar($sql);
     if($linha = $resut->fetch_assoc()){
@@ -21,6 +23,11 @@ if(isset($_GET['id'])){
     <title>Tarefa</title>
 </head>
 <body>
+    <style>
+        .alert-light{
+            border: solid 1px black;
+        }
+    </style>
     <div class="row justify-content-center">
         <div class="col-6">
     <div class="container">
@@ -32,10 +39,10 @@ if(isset($_GET['id'])){
             <p>
                 <?= $descricao ?>
             </p>
-            </div>
-            </div>
-        </div>    
+        </div>
+        <br>
     </div>
- 
+    </div>
+        </div>
 </body>
 </html>
